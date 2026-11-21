@@ -1,0 +1,6 @@
+@import "tailwindcss";
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #f4f4f8; background: #09090f; font-synthesis: none; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+::selection { background: #7c3aed; color: white; }
+.glow { background: radial-gradient(ellipse at 65% 20%, rgba(109,40,217,.22), transparent 55%), radial-gradient(ellipse at 10% 70%, rgba(37,99,235,.12), transparent 50%); }
