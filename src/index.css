@@ -33,7 +33,7 @@ body { margin: 0; }
 
 .hero-orbit::before,
 .hero-orbit::after,
-.hero-orbit span {
+.orbit-ring {
   grid-area: 1 / 1;
   width: min(70%, 285px);
   aspect-ratio: 1;
@@ -47,7 +47,7 @@ body { margin: 0; }
 }
 
 .hero-orbit::after,
-.hero-orbit span {
+.orbit-ring {
   width: 89%;
   aspect-ratio: 2.35;
   border: 1px solid #9d83db70;
@@ -55,7 +55,7 @@ body { margin: 0; }
   box-shadow: 0 0 18px #9d83db27;
 }
 
-.hero-orbit span {
+.orbit-ring {
   width: 77%;
   transform: rotate(22deg);
   opacity: 0.5;
@@ -63,12 +63,15 @@ body { margin: 0; }
 
 .surface {
   border: 1px solid #31283f;
-  background: linear-gradient(145deg, #1a1627, #101017 72%);
+  background: linear-gradient(145deg, #b09be51e, #17132387 54%, #0d0c14be);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #e6dcff25, 0 8px 28px #05030c38;
 }
 
 .project-card {
   border-color: #6e549b;
-  background: radial-gradient(ellipse at 100% 0%, #2b1b49, transparent 55%), #121019;
+  background: radial-gradient(ellipse at 100% 0%, #9d70f03d, transparent 60%),
+    linear-gradient(145deg, #c6b3f01a, #100e19ba);
 }
 
 .skill {
@@ -96,30 +99,27 @@ a:focus-visible {
   html { scroll-behavior: auto; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .hero-orbit::before,
-  .hero-orbit::after,
-  .hero-orbit span {
-    animation: orbit-float 4.8s ease-in-out both;
-  }
-
-  @keyframes orbit-float {
-    0%, 100% { translate: 0 0; }
-    40% { translate: 0 -12px; }
-    75% { translate: 0 5px; }
-  }
+.orbit-hit {
+  grid-area: 1 / 1;
+  width: min(70%, 285px);
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .orbit-hit { pointer-events: auto; }
+
   .hero-orbit::before,
   .hero-orbit::after,
-  .hero-orbit span {
-    transform: translate(var(--pointer-x, 0px), var(--pointer-y, 0px)) rotate(var(--orbit-angle, 0deg));
-    transition: transform 200ms ease-out;
+  .orbit-ring {
+    transition: translate 450ms ease-out;
   }
 
-  .hero-orbit::after { --orbit-angle: -25deg; }
-  .hero-orbit span { --orbit-angle: 22deg; }
+  .hero-orbit:has(.orbit-hit:hover)::before,
+  .hero-orbit:has(.orbit-hit:hover)::after,
+  .hero-orbit:has(.orbit-hit:hover) .orbit-ring {
+    translate: 0 -5px;
+  }
 
   .pointer-tilt {
     rotate: var(--pointer-tilt, 1 0 0 0deg);

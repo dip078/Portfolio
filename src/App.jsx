@@ -5,26 +5,19 @@ const projects = [
   { title: 'SafeNex', description: 'Privacy threat detection application using federated learning.', contribution: 'I designed and developed the React interface for SafeNex. The app uses federated learning for privacy threat detection.', tags: ['AI', 'Federated Learning', 'Privacy'], url: '' },
 ];
 const skills = ['Java', 'Python', 'SQL', 'React', 'JavaScript', 'Database Management'];
-function trackPointer(event, isHero = false) {
+function trackPointer(event) {
   if (event.pointerType !== 'mouse' ||
       !window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
 
   const target = event.currentTarget;
-  const bounds = (isHero ? target : target.parentElement).getBoundingClientRect();
+  const bounds = target.parentElement.getBoundingClientRect();
   const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width) * 2 - 1));
   const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height) * 2 - 1));
 
-  if (isHero) {
-    target.style.setProperty('--pointer-x', `${x * 22}px`);
-    target.style.setProperty('--pointer-y', `${y * 14}px`);
-  } else {
-    target.style.setProperty('--pointer-tilt', `${-y} ${x} 0 ${Math.hypot(x, y) * 3}deg`);
-  }
+  target.style.setProperty('--pointer-tilt', `${-y} ${x} 0 ${Math.hypot(x, y) * 3}deg`);
 }
 
 function resetPointer({ currentTarget }) {
-  currentTarget.style.removeProperty('--pointer-x');
-  currentTarget.style.removeProperty('--pointer-y');
   currentTarget.style.removeProperty('--pointer-tilt');
 }
 
@@ -52,8 +45,8 @@ export default function App() {
       </header>
 
       <main id="home">
-        <section onPointerMove={event => trackPointer(event, true)} onPointerLeave={resetPointer} className="hero mx-auto max-w-6xl px-6 pt-12 pb-9 sm:pt-17 sm:pb-12">
-          <div className="hero-orbit" aria-hidden="true"><span /></div>
+        <section className="hero mx-auto max-w-6xl px-6 pt-12 pb-9 sm:pt-17 sm:pb-12">
+          <div className="hero-orbit" aria-hidden="true"><span className="orbit-ring" /><span className="orbit-hit" /></div>
           <div className="relative">
             <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight sm:text-7xl"><span className="bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent">Dip Bagdi</span></h1>
             <h2 className="mt-3 text-2xl font-semibold text-zinc-200 sm:text-4xl">Full Stack Developer</h2>
