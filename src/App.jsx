@@ -1,5 +1,5 @@
 import { motion, MotionConfig, useReducedMotion } from 'motion/react';
-import { Github, Mail, ArrowUpRight, Download, Code2, ShieldCheck } from 'lucide-react';
+import { Github, Facebook, Instagram, Mail, ArrowUpRight, Download, Code2, ShieldCheck } from 'lucide-react';
 
 const contactEmail = 'dipabagdi2003@gmail.com';
 const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}`;
@@ -43,9 +43,17 @@ export default function App() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:py-5">
         <a href="#home" className="flex items-center gap-2 font-bold text-xl"><Code2 className="text-violet-400" /> Dip Bagdi</a>
         <nav aria-label="Main navigation" className="nav-pill hidden gap-1 text-sm text-zinc-300 sm:flex">
-          <a href="#about" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">About</a><a href="#skills" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Skills</a><a href="#projects" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Projects</a><a href="#contact" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Contact</a>
+          <a href="#about" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">About</a><a href="#skills" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Skills</a><a href="#projects" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Projects</a>
         </nav>
-        <a href="#contact" className="rounded-full border border-violet-500/50 px-4 py-2 text-sm hover:bg-violet-500/10">Hire Me</a>
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+          <a href="https://www.facebook.com/maxyop007" target="_blank" rel="noreferrer" aria-label="Facebook" className="rounded-full p-2 text-zinc-300 transition-colors hover:bg-white/10 hover:text-white">
+            <Facebook size={18} aria-hidden="true" />
+          </a>
+          <a href="https://www.instagram.com/dip.__.2003/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram" className="rounded-full p-2 text-zinc-300 transition-colors hover:bg-white/10 hover:text-white">
+            <Instagram size={18} aria-hidden="true" />
+          </a>
+          <a href="#contact" className="ml-1 rounded-full border border-violet-500/50 px-4 py-2 text-sm hover:bg-violet-500/10">Hire Me</a>
+        </div>
       </header>
 
       <main id="home">
