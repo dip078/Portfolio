@@ -69,6 +69,19 @@ export default function App() {
         <section id="skills" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">Technical Skills</h2><div className="mt-4 flex flex-wrap gap-2.5">{skills.map(skill => <span key={skill} className="skill rounded-xl px-3.5 py-2 text-sm font-medium text-zinc-200">{skill}</span>)}</div></motion.div></section>
         </div>
 
+        <section id="education" aria-labelledby="education-title" className="mx-auto max-w-6xl scroll-mt-5 px-6 pb-5">
+          <motion.div {...reveal} className="surface rounded-2xl p-5 sm:p-7">
+            <h2 id="education-title" className="text-2xl font-bold sm:text-3xl">Education</h2>
+            <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <h3 className="text-xl font-semibold">Computer Science</h3>
+              <p className="text-sm font-medium text-violet-200">2021 batch · Graduated in 2026</p>
+            </div>
+            <p className="mt-2 max-w-3xl leading-7 text-zinc-400">
+              My studies built a foundation in programming and database management that I apply to web and software projects.
+            </p>
+          </motion.div>
+        </section>
+
         <section id="projects" className="mx-auto max-w-6xl scroll-mt-5 px-6 py-5 sm:py-7"><motion.div {...reveal}><h2 className="text-2xl font-bold sm:text-3xl">Featured Projects</h2><div className="mt-4 grid gap-4">{projects.map(project => <article key={project.title} {...tiltHandlers} className="pointer-tilt surface project-card relative overflow-hidden rounded-2xl p-5 sm:p-7"><h3 className="flex items-center gap-3 text-xl font-bold"><ShieldCheck aria-hidden="true" size={27} className="text-violet-300"/>{project.title}</h3><p className="mt-3 text-zinc-400">{project.description}</p>{project.contribution && (
                 <section className="mt-4 border-l-2 border-violet-400/60 pl-4">
                   <h4 className="font-semibold">What I built</h4>
