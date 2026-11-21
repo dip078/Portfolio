@@ -55,7 +55,7 @@ export default function App() {
           <div className="hero-copy">
             <h1 className="hero-name"><span className="bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent">Dip Bagdi</span></h1>
             <h2 className="hero-role mt-3 text-zinc-200">Full Stack Developer</h2>
-            <p className="hero-intro mt-4">I build practical software and explore intelligent solutions using Java, Python, databases, and modern web technologies.</p>
+            <p className="hero-intro mt-4">I build web interfaces with React and work with Java, Python, SQL, and database management.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-6 py-3 font-semibold hover:bg-violet-500">View Projects <ArrowUpRight size={18}/></a>
               <a href="/resume.pdf" download className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 font-semibold hover:border-violet-400">Download Resume <Download size={18}/></a>
@@ -64,7 +64,7 @@ export default function App() {
         </section>
 
         <div className="mx-auto grid max-w-6xl gap-4 px-6 pb-5 md:grid-cols-[1.25fr_1fr]">
-        <section id="about" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 max-w-3xl leading-7 text-zinc-400">I'm a developer interested in full-stack engineering, backend programming, database systems, and AI.</p></motion.div></section>
+        <section id="about" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 max-w-3xl leading-7 text-zinc-400">I work across web development, programming, and database management. I use React and Vite for frontend projects, Java and Python for application development, and SQL to query and manage data. For SafeNex, I designed and built the React interface for a privacy threat detection app.</p></motion.div></section>
 
         <section id="skills" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">Technical Skills</h2><div className="mt-4 flex flex-wrap gap-2.5">{skills.map(skill => <span key={skill} className="skill rounded-xl px-3.5 py-2 text-sm font-medium text-zinc-200">{skill}</span>)}</div></motion.div></section>
         </div>
