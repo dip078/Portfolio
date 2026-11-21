@@ -95,3 +95,34 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-orbit::before,
+  .hero-orbit::after,
+  .hero-orbit span {
+    animation: orbit-float 4.8s ease-in-out both;
+  }
+
+  @keyframes orbit-float {
+    0%, 100% { translate: 0 0; }
+    40% { translate: 0 -12px; }
+    75% { translate: 0 5px; }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-orbit::before,
+  .hero-orbit::after,
+  .hero-orbit span {
+    transform: translate(var(--pointer-x, 0px), var(--pointer-y, 0px)) rotate(var(--orbit-angle, 0deg));
+    transition: transform 200ms ease-out;
+  }
+
+  .hero-orbit::after { --orbit-angle: -25deg; }
+  .hero-orbit span { --orbit-angle: 22deg; }
+
+  .pointer-tilt {
+    rotate: var(--pointer-tilt, 1 0 0 0deg);
+    transition: rotate 220ms ease-out;
+  }
+}
