@@ -20,7 +20,7 @@ body { margin: 0; }
 .hero {
   position: relative;
   isolation: isolate;
-  --portrait-width: clamp(225px, 34vw, 345px);
+  --portrait-width: clamp(215px, 33vw, 330px);
   padding-top: clamp(190px, 29vw, 313px);
   padding-bottom: clamp(2rem, 4vw, 3.25rem);
   text-align: center;
@@ -47,7 +47,7 @@ body { margin: 0; }
 .hero-portrait {
   position: absolute;
   z-index: -1;
-  inset: 0 0 auto;
+  inset: 8px 0 auto;
   display: grid;
   justify-items: center;
   pointer-events: none;
