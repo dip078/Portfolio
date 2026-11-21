@@ -65,7 +65,20 @@ export default function App() {
         </section>
 
         <div className="mx-auto grid max-w-6xl gap-4 px-6 pb-5 md:grid-cols-[1.25fr_1fr]">
-        <section id="about" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 max-w-3xl leading-7 text-zinc-400">I work across web development, programming, and database management. I use React and Vite for frontend projects, Java and Python for application development, and SQL to query and manage data. For SafeNex, I designed and built the React interface for a privacy threat detection app.</p></motion.div></section>
+        <section id="about" className="scroll-mt-5 md:col-span-2"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 max-w-3xl leading-7 text-zinc-400">I work across web development, programming, and database management. I use React and Vite for frontend projects, Java and Python for application development, and SQL to query and manage data. For SafeNex, I designed and built the React interface for a privacy threat detection app.</p></motion.div></section>
+
+        <section id="education" aria-labelledby="education-title" className="scroll-mt-5">
+          <motion.div {...reveal} className="surface h-full rounded-2xl p-5 sm:p-7">
+            <h2 id="education-title" className="text-2xl font-bold sm:text-3xl">Education</h2>
+            <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <h3 className="text-xl font-semibold">Computer Science</h3>
+              <p className="text-sm font-medium text-violet-200">2021 batch · Graduated in 2026</p>
+            </div>
+            <p className="mt-2 max-w-3xl leading-7 text-zinc-400">
+              My studies built a foundation in programming and database management that I apply to web and software projects.
+            </p>
+          </motion.div>
+        </section>
 
         <section id="skills" className="scroll-mt-5"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">Technical Skills</h2><div className="mt-4 flex flex-wrap gap-2.5">{skills.map(skill => <span key={skill} className="skill rounded-xl px-3.5 py-2 text-sm font-medium text-zinc-200">{skill}</span>)}</div></motion.div></section>
         </div>
@@ -76,19 +89,6 @@ export default function App() {
             <h3 className="mt-3 text-xl font-semibold">Freelance Developer · Web, Java &amp; Python</h3>
             <p className="mt-2 max-w-3xl leading-7 text-zinc-400">
               Worked on freelance web development projects, built software applications in Java and Python, and handled database management tasks.
-            </p>
-          </motion.div>
-        </section>
-
-        <section id="education" aria-labelledby="education-title" className="mx-auto max-w-6xl scroll-mt-5 px-6 pb-5">
-          <motion.div {...reveal} className="surface rounded-2xl p-5 sm:p-7">
-            <h2 id="education-title" className="text-2xl font-bold sm:text-3xl">Education</h2>
-            <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-              <h3 className="text-xl font-semibold">Computer Science</h3>
-              <p className="text-sm font-medium text-violet-200">2021 batch · Graduated in 2026</p>
-            </div>
-            <p className="mt-2 max-w-3xl leading-7 text-zinc-400">
-              My studies built a foundation in programming and database management that I apply to web and software projects.
             </p>
           </motion.div>
         </section>
