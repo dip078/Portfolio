@@ -99,25 +99,49 @@ a:focus-visible {
   html { scroll-behavior: auto; }
 }
 
-.orbit-hit {
+.hero-portrait img {
   grid-area: 1 / 1;
-  width: min(70%, 285px);
-  aspect-ratio: 1;
-  border-radius: 50%;
+  z-index: 1;
+  width: min(54%, 255px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 1px solid #ac90db96;
+  border-radius: 1.75rem;
+  box-shadow: 0 16px 44px #080511a8, 0 0 32px #9b69ef42;
+}
+
+@media (max-width: 767px) {
+  .hero:has(.hero-portrait) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.25rem;
+  }
+
+  .hero-portrait {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    min-height: 220px;
+    opacity: 1;
+  }
+
+  .hero-portrait img { width: min(47%, 170px); }
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .orbit-hit { pointer-events: auto; }
+  .hero-portrait img { pointer-events: auto; }
 
   .hero-orbit::before,
   .hero-orbit::after,
-  .orbit-ring {
+  .orbit-ring,
+  .hero-portrait img {
     transition: translate 450ms ease-out;
   }
 
-  .hero-orbit:has(.orbit-hit:hover)::before,
-  .hero-orbit:has(.orbit-hit:hover)::after,
-  .hero-orbit:has(.orbit-hit:hover) .orbit-ring {
+  .hero-portrait:has(img:hover)::before,
+  .hero-portrait:has(img:hover)::after,
+  .hero-portrait:has(img:hover) .orbit-ring {
     translate: 0 -5px;
   }
 
@@ -152,4 +176,8 @@ h1, h2, h3, h4 {
   color: #b3adc1;
   font-size: clamp(1rem, 2.2vw, 1.125rem);
   line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .hero:has(.hero-portrait) > .relative { max-width: 52%; }
 }

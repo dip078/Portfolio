@@ -49,7 +49,10 @@ export default function App() {
 
       <main id="home">
         <section className="hero mx-auto max-w-6xl px-6 pt-12 pb-9 sm:pt-17 sm:pb-12">
-          <div className="hero-orbit" aria-hidden="true"><span className="orbit-ring" /><span className="orbit-hit" /></div>
+          <div className="hero-orbit hero-portrait">
+            <span className="orbit-ring" aria-hidden="true" />
+            <img src="/dip-bagdi-portrait.webp" alt="Dip Bagdi" />
+          </div>
           <div className="relative">
             <h1 className="hero-name"><span className="bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent">Dip Bagdi</span></h1>
             <h2 className="hero-role mt-3 text-zinc-200">Full Stack Developer</h2>
