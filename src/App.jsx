@@ -1,6 +1,9 @@
 import { motion, MotionConfig, useReducedMotion } from 'motion/react';
 import { Github, Mail, ArrowUpRight, Download, Code2, ShieldCheck } from 'lucide-react';
 
+const contactEmail = 'dipabagdi2003@gmail.com';
+const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}`;
+
 const projects = [
   { title: 'SafeNex', description: 'Privacy threat detection application using federated learning.', contribution: 'I designed and developed the React interface for SafeNex. The app uses federated learning for privacy threat detection.', tags: ['AI', 'Federated Learning', 'Privacy'], url: '' },
 ];
@@ -71,7 +74,12 @@ export default function App() {
                 </section>
               )}<div className="mt-5 flex flex-wrap gap-2">{project.tags.map(tag => <span key={tag} className="rounded-full bg-violet-500/10 px-3 py-1 text-xs text-violet-300">{tag}</span>)}</div>{project.url && <a href={project.url} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-violet-300">View Repository <ArrowUpRight size={16}/></a>}</article>)}</div></motion.div></section>
 
-        <section id="contact" className="mx-auto max-w-6xl scroll-mt-5 px-6 py-5 sm:py-7"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt rounded-3xl border border-violet-500/20 contact-panel p-5 sm:p-7"><h2 className="text-3xl font-bold">Let's Work Together</h2><p className="mt-4 text-zinc-400">Interested in collaborating or discussing an opportunity? Reach out by email or find me on GitHub.</p><div className="mt-5 flex flex-wrap gap-3"><a href="mailto:dipabagdi2003@gmail.com" className="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-5 py-3 font-medium hover:bg-violet-500"><Mail size={18}/> Email me</a><a href="https://github.com/dip078" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-xl border border-zinc-700 p-3 hover:border-violet-400"><Github/></a></div></motion.div></section>
+        <section id="contact" className="mx-auto max-w-6xl scroll-mt-5 px-6 py-5 sm:py-7"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt rounded-3xl border border-violet-500/20 contact-panel p-5 sm:p-7"><h2 className="text-3xl font-bold">Let's Work Together</h2><p className="mt-4 text-zinc-400">Interested in collaborating or discussing an opportunity? Reach out by email or find me on GitHub.</p><div className="mt-5 flex flex-wrap gap-3"><a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-5 py-3 font-medium hover:bg-violet-500"><Mail size={18}/> Email me</a><a
+          href={gmailCompose}
+          className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-5 py-3 font-medium hover:border-violet-400"
+        >
+          Open in Gmail <ArrowUpRight size={16} aria-hidden="true" />
+        </a><a href="https://github.com/dip078" target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-xl border border-zinc-700 p-3 hover:border-violet-400"><Github/></a></div></motion.div></section>
       </main>
       <footer className="border-t border-zinc-800 px-6 py-7 text-center text-sm text-zinc-500">© {new Date().getFullYear()} Dip Bagdi. Built with React.</footer>
     </div>
