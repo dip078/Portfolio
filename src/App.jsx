@@ -50,13 +50,13 @@ export default function App() {
       <main id="home">
         <section className="hero mx-auto max-w-6xl px-6">
           <div className="hero-portrait">
-            <img src="/dip-bagdi-portrait.webp" alt="Dip Bagdi" />
+            <img src="/dip-bagdi-portrait.webp" alt="Dip Bagdi" fetchPriority="high" />
           </div>
           <div className="hero-copy">
             <h1 className="hero-name"><span className="bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent">Dip Bagdi</span></h1>
             <h2 className="hero-role mt-3 text-zinc-200">Full Stack Developer</h2>
             <p className="hero-intro mt-4">I build practical software and explore intelligent solutions using Java, Python, databases, and modern web technologies.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-6 py-3 font-semibold hover:bg-violet-500">View Projects <ArrowUpRight size={18}/></a>
               <a href="/resume.pdf" download className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 font-semibold hover:border-violet-400">Download Resume <Download size={18}/></a>
             </div>

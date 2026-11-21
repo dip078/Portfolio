@@ -19,62 +19,39 @@ body { margin: 0; }
 .hero {
   position: relative;
   isolation: isolate;
-  display: grid;
-  align-items: end;
-  min-height: clamp(320px, 36vw, 455px);
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: clamp(11rem, 28vw, 18rem);
+  padding-bottom: clamp(2rem, 4vw, 3.25rem);
+  text-align: center;
 }
 
 .hero-copy {
-  z-index: 1;
-  width: min(60%, 37rem);
+  position: relative;
+  width: min(100%, 38rem);
+  margin-inline: auto;
 }
 
 .hero-portrait {
   position: absolute;
-  inset: 0 0 0 37%;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: clamp(15rem, 36vw, 24rem);
   display: grid;
-  justify-items: center;
-  overflow: hidden;
-  isolation: isolate;
-  background: radial-gradient(ellipse at 57% 27%, #8e60f34f 0%, #54369130 32%, transparent 67%);
+  place-items: start center;
+  background: radial-gradient(ellipse min(42vw, 25rem) 14rem at 50% 33%, #744cca50, transparent);
   pointer-events: none;
 }
 
 .hero-portrait img {
-  width: min(100%, 460px);
+  width: clamp(15rem, 42vw, 25rem);
   height: 100%;
   min-height: 0;
   object-fit: cover;
-  object-position: center 21%;
-  filter: saturate(0.48) brightness(0.88) contrast(1.08);
-  mask-image: radial-gradient(ellipse 50% 66% at 53% 26%, #000 32%, #000e 52%, transparent 100%);
-}
-
-.hero-portrait::after {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 53% 21%, #a980fc66, transparent 56%);
-  mix-blend-mode: soft-light;
-  content: "";
-}
-
-@media (max-width: 767px) {
-  .hero {
-    padding-top: clamp(10.5rem, 49vw, 17rem);
-    padding-bottom: 2rem;
-  }
-
-  .hero-copy { width: 100%; }
-
-  .hero-portrait {
-    inset: 0 0 auto;
-    height: clamp(235px, 64vw, 365px);
-    justify-items: end;
-  }
-
-  .hero-portrait img { width: min(88%, 390px); }
+  object-position: center 15%;
+  filter: saturate(0.7) brightness(0.93);
+  mask-image:
+    radial-gradient(ellipse 49% 63% at 51% 33%, #000 30%, #000c 56%, transparent 97%),
+    linear-gradient(to bottom, transparent, #000 13%, #000 51%, transparent 96%);
+  mask-composite: intersect;
 }
 
 .surface {
@@ -137,6 +114,7 @@ h1, h2, h3, h4 {
 
 .hero-intro {
   max-width: 54ch;
+  margin-inline: auto;
   color: #b3adc1;
   font-size: clamp(1rem, 2.2vw, 1.125rem);
   line-height: 1.65;
