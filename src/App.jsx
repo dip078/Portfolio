@@ -1,5 +1,5 @@
 import { motion, MotionConfig, useReducedMotion } from 'motion/react';
-import { Github, Instagram, Mail, ArrowUpRight, Download, Code2, ShieldCheck } from 'lucide-react';
+import { Github, Facebook, Instagram, Mail, ArrowUpRight, Download, Code2, ShieldCheck } from 'lucide-react';
 
 const contactEmail = 'dipabagdi2003@gmail.com';
 const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}`;
@@ -46,13 +46,11 @@ export default function App() {
           <a href="#about" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">About</a><a href="#skills" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Skills</a><a href="#projects" className="rounded-full px-3 py-1.5 transition-colors hover:bg-white/10 hover:text-white">Projects</a>
         </nav>
         <div className="flex shrink-0 items-center gap-1 sm:gap-2">
-          <a href="https://www.facebook.com/maxyop007" target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex size-10 items-center justify-center rounded-xl text-white shadow-sm transition-shadow hover:shadow-md bg-[#0866FF] hover:shadow-blue-500/50">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-              <path d="M14.1 22v-9h3l.45-3.5H14.1V7.27c0-1.01.28-1.7 1.73-1.7h1.86V2.45a24.8 24.8 0 0 0-2.7-.14c-2.68 0-4.52 1.64-4.52 4.65V9.5H7.45V13h3.02v9h3.63Z" />
-            </svg>
+          <a href="https://www.facebook.com/maxyop007" target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex size-10 items-center justify-center rounded-xl border border-zinc-500/70 text-zinc-300 transition-colors hover:border-zinc-300 hover:bg-white/10 hover:text-white">
+            <Facebook size={18} aria-hidden="true" />
           </a>
-          <a href="https://www.instagram.com/dip.__.2003/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex size-10 items-center justify-center rounded-xl text-white shadow-sm transition-shadow hover:shadow-md bg-[radial-gradient(circle_at_28%_105%,#ffd76b_0%,#ff983c_24%,#f03576_53%,#b92f9f_74%,#6348ed_100%)] hover:shadow-pink-500/50">
-            <Instagram size={20} aria-hidden="true" />
+          <a href="https://www.instagram.com/dip.__.2003/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex size-10 items-center justify-center rounded-xl border border-zinc-500/70 text-zinc-300 transition-colors hover:border-zinc-300 hover:bg-white/10 hover:text-white">
+            <Instagram size={18} aria-hidden="true" />
           </a>
           <a href="#contact" className="ml-1 rounded-full border border-violet-500/50 px-4 py-2 text-sm hover:bg-violet-500/10">Hire Me</a>
         </div>
