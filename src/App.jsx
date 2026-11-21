@@ -65,7 +65,7 @@ export default function App() {
         </section>
 
         <div className="mx-auto grid max-w-6xl gap-4 px-6 pb-5 md:grid-cols-[1.25fr_1fr]">
-        <section id="about" className="scroll-mt-5 md:col-span-2"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 max-w-3xl leading-7 text-zinc-400">I work across web development, programming, and database management. I use React and Vite for frontend projects, Java and Python for application development, and SQL to query and manage data. For SafeNex, I designed and built the React interface for a privacy threat detection app.</p></motion.div></section>
+        <section id="about" className="scroll-mt-5 md:col-span-2"><motion.div {...reveal} {...tiltHandlers} className="pointer-tilt surface h-full rounded-2xl p-5 sm:p-7"><h2 className="text-2xl font-bold sm:text-3xl">About Me</h2><p className="mt-3 text-base leading-relaxed sm:text-lg text-zinc-400">I work across web development, programming, and database management. I use React and Vite for frontend projects, Java and Python for application development, and SQL to query and manage data. For SafeNex, I designed and built the React interface for a privacy threat detection app.</p></motion.div></section>
 
         <section id="education" aria-labelledby="education-title" className="scroll-mt-5">
           <motion.div {...reveal} className="surface h-full rounded-2xl p-5 sm:p-7">
