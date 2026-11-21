@@ -3,38 +3,81 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; }
 ::selection { background: #7c3aed; color: white; }
-.glow { background: radial-gradient(ellipse at 65% 20%, rgba(109,40,217,.22), transparent 55%), radial-gradient(ellipse at 10% 70%, rgba(37,99,235,.12), transparent 50%); }
+.glow {
+  background: radial-gradient(ellipse at 74% 0%, #23143e 0%, transparent 44%),
+    radial-gradient(ellipse at 8% 37%, #101324 0%, transparent 52%),
+    #09090f;
+}
+
+.nav-pill {
+  border: 1px solid #30283f;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #211b31, #111017);
+  padding: 4px;
+}
 
 .hero {
   position: relative;
   isolation: isolate;
 }
 
-.hero::before {
+.hero-orbit {
   position: absolute;
   z-index: -1;
-  inset: 0 0 0 38%;
-  background-image:
-    linear-gradient(rgba(167, 139, 250, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167, 139, 250, 0.16) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse at 70% 48%, #000 8%, transparent 69%);
-  content: "";
+  inset: 0 0 0 53%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   pointer-events: none;
 }
 
+.hero-orbit::before,
+.hero-orbit::after,
+.hero-orbit span {
+  grid-area: 1 / 1;
+  width: min(70%, 285px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  content: "";
+}
+
+.hero-orbit::before {
+  background: radial-gradient(circle at 38% 28%, #b5a2ff 0%, #6644ad 21%, #23163f 47%, #100d1c 71%);
+  box-shadow: inset -14px -15px 30px #0b0815, 0 0 70px #794dcc48;
+}
+
+.hero-orbit::after,
+.hero-orbit span {
+  width: 89%;
+  aspect-ratio: 2.35;
+  border: 1px solid #9d83db70;
+  transform: rotate(-25deg);
+  box-shadow: 0 0 18px #9d83db27;
+}
+
+.hero-orbit span {
+  width: 77%;
+  transform: rotate(22deg);
+  opacity: 0.5;
+}
+
 .surface {
-  border: 1px solid rgba(167, 139, 250, 0.23);
-  background: linear-gradient(130deg, #19152a, #101119 72%);
+  border: 1px solid #31283f;
+  background: linear-gradient(145deg, #1a1627, #101017 72%);
 }
 
 .project-card {
-  box-shadow: inset 0 2px #a78bfa;
+  border-color: #6e549b;
+  background: radial-gradient(ellipse at 100% 0%, #2b1b49, transparent 55%), #121019;
 }
 
 .skill {
-  border: 1px solid rgba(167, 139, 250, 0.24);
-  background: #181529;
+  border: 1px solid #403353;
+  background: #20192e;
+}
+
+.contact-panel {
+  background: radial-gradient(ellipse at 100% 0%, #2b1b49, transparent 68%), #121019;
 }
 
 a:focus-visible {
@@ -42,10 +85,10 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-@media (max-width: 639px) {
-  .hero::before {
-    inset-inline-start: 15%;
-    opacity: 0.6;
+@media (max-width: 767px) {
+  .hero-orbit {
+    inset: 0 0 18% 46%;
+    opacity: 0.35;
   }
 }
 
