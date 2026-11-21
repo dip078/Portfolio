@@ -1,5 +1,5 @@
 @import "tailwindcss";
-:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #f4f4f8; background: #09090f; font-synthesis: none; }
+:root { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; color: #f4f4f8; background: #09090f; font-synthesis: none; }
 html { scroll-behavior: smooth; }
 body { margin: 0; }
 ::selection { background: #7c3aed; color: white; }
@@ -125,4 +125,31 @@ a:focus-visible {
     rotate: var(--pointer-tilt, 1 0 0 0deg);
     transition: rotate 220ms ease-out;
   }
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.hero-name {
+  font-family: Michroma, "Space Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.65rem, 6.7vw, 3.85rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.hero-role {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.hero-intro {
+  max-width: 54ch;
+  color: #b3adc1;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  line-height: 1.65;
 }
